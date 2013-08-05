@@ -361,4 +361,31 @@ function time_since($current_time=NULL, $other_time=NULL){
 	}
 }
 
+/*
+*	Binary Search
+*	
+*	Author: Alexander Bech / www.alexanderbech.com
+*	http://github.com/AlexanderBech/
+*/
+function binarySearch($key, $array){
+    
+    $low = 0;
+    $high = count($array) - 1;
+    
+    while($low <= $high){
+         
+        $mid = floor(($low + $high)/2);
+        $value = $array[$mid];
+        
+        if($value < $key){
+             $low = $mid + 1;   
+        } else if($value > $key){
+            $high = $mid - 1;
+        } else {
+             return $mid;   
+        }
+    }
+    return null;
+}
+
 ?>
